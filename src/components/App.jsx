@@ -4,7 +4,6 @@ import s from './Phonebook/Phonebook.module.css';
 import ContactForm from './Phonebook/Form-elevents/ContactForm';
 import Filter from './Phonebook/Filter';
 import ContactList from './Phonebook/Form-elevents/ContactList';
-import { number } from 'prop-types';
 
 export class App extends Component {
   state = {

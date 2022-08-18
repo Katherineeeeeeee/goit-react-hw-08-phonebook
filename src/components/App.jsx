@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import s from './Phonebook/Phonebook.module.css';
 
-import ContactForm from './Phonebook/Form-elevents/ContactForm';
+import ContactForm from './Phonebook/Form-elements/ContactForm';
 import Filter from './Phonebook/Filter';
-import ContactList from './Phonebook/Form-elevents/ContactList';
+import ContactList from './Phonebook/Form-elements/ContactList';
 
 export class App extends Component {
   state = {

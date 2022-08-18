@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
+import s from '../Phonebook.module.css';
 import ConactListItem from './ContactListItem';
 
 const ContactList = ({ contacts, onDeleteContact }) => {
   return (
     <>
-      <ul>
+      <ul className={s.list}>
         {contacts?.map(contact => (
           <ConactListItem
             key={nanoid()}

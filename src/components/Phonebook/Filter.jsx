@@ -4,7 +4,7 @@ import s from '../Phonebook/Phonebook.module.css';
 const Filter = ({ value, onChange }) => {
   return (
     <input
-      className={s.input}
+      className={s.filter}
       value={value}
       onChange={onChange}
       type="text"
@@ -14,7 +14,7 @@ const Filter = ({ value, onChange }) => {
 };
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
 

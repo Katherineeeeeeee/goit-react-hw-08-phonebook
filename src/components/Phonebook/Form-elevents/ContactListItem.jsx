@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import s from '../Phonebook/Phonebook.module.css';
+import s from '../Phonebook.module.css';
 
 const ContactListItem = ({ name, number, onDeleteContact, id }) => {
   return (
     <>
-      <li>
-        {`${name}: ${number}`}
+      <li className={s.item}>
+        {`${name} : ${number}`}
         <button className={s.btn} onClick={() => onDeleteContact(id)}>
           Delete
         </button>

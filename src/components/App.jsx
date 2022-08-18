@@ -1,9 +1,10 @@
 import { Component } from 'react';
 import s from './Phonebook/Phonebook.module.css';
 
-import ContactForm from './Phonebook/ContactForm';
+import ContactForm from './Phonebook/Form-elevents/ContactForm';
 import Filter from './Phonebook/Filter';
-import ContactList from './Phonebook/ContactList';
+import ContactList from './Phonebook/Form-elevents/ContactList';
+import { number } from 'prop-types';
 
 export class App extends Component {
   state = {
@@ -28,13 +29,21 @@ export class App extends Component {
 
   getfilterContacts = () => {
     const { contacts, filter } = this.state;
-
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
+    if (!filter) {
+      return contacts;
+    }
+    return contacts.filter(
+      contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+        contact.number.includes(filter.toLowerCase())
     );
   };
 
   submitContact = data => {
+    if (this.isDublicate(data)) {
+      return alert(`${data.name} : ${data.number} is already in list`);
+    }
+
     const newContact = {
       id: data.id,
       name: data.name,
@@ -46,8 +55,15 @@ export class App extends Component {
     }));
   };
 
+  isDublicate({ name, number }) {
+    const { contacts } = this.state;
+    const result = contacts.find(
+      item => item.name === name && item.number === number
+    );
+    return result;
+  }
   render() {
-    const { contacts, filter } = this.state;
+    const { contacts, filter } = this;
     const filterContacts = this.getfilterContacts();
 
     return (

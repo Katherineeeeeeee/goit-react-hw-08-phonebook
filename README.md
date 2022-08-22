@@ -1,4 +1,4 @@
-## goit-react-hw-02-phonebook
+## goit-react-hw-03-phonebook
 
 Цей проєкт був створений за допомогою [Create React App](https://github.com/facebook/create-react-app). Для знайомства та налаштування додаткових можливостей [звернись до документації](https://facebook.github.io/create-react-app/docs/getting-started).
 

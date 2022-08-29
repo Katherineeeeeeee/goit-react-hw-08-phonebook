@@ -18,11 +18,6 @@ const ContactForm = ({ onSubmit }) => {
     e.preventDefault();
     onSubmit({ ...state });
     setState({ ...initialState });
-    reset();
-  };
-
-  const reset = () => {
-    setState({ ...initialState });
   };
 
   const { name, number } = state;

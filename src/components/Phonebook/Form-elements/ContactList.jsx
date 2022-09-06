@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import s from '../Phonebook.module.css';
 import ConactListItem from './ContactListItem';
 
-const ContactList = ({ contacts, onDeleteContact }) => {
+const ContactList = ({ contacts, removeContact }) => {
   return (
     <>
       <ul className={s.list}>
@@ -13,7 +13,7 @@ const ContactList = ({ contacts, onDeleteContact }) => {
             id={contact.id}
             name={contact.name}
             number={contact.number}
-            onDeleteContact={onDeleteContact}
+            removeContact={removeContact}
           />
         ))}
       </ul>
@@ -28,7 +28,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
-      onDeleteContact: PropTypes.func,
+      removeContact: PropTypes.func,
       id: PropTypes.string,
     })
   ),

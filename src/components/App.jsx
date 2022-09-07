@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   addContactAction,
   removeContactAction,
-} from '../redux/contacts/items/items-actions';
-import { filterAction } from 'redux/contacts/filter/filter-actions';
+} from '../redux/contacts/items/items-slice';
+import { setFilter } from 'redux/contacts/filter/filter-slice';
 import {
   getFilterContacts,
   getContacts,
@@ -17,19 +17,6 @@ import ContactList from './Phonebook/Form-elements/ContactList';
 
 import s from './Phonebook/Phonebook.module.css';
 
-const isDublicate = ({ name, number }, contacts) => {
-  const normalizedName = name.toLowerCase();
-  const normalizedNumber = number.toLowerCase();
-
-  const result = contacts.find(item => {
-    return (
-      normalizedName === item.name.toLowerCase() &&
-      normalizedNumber === item.number.toLowerCase()
-    );
-  });
-  return Boolean(result);
-};
-
 const App = () => {
   const contacts = useSelector(getContacts);
 
@@ -38,9 +25,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const addContact = data => {
-    if (isDublicate(data, contacts)) {
-      return alert(`${data.name} : ${data.number} is already in list`);
-    }
     dispatch(addContactAction(data));
   };
 
@@ -49,7 +33,7 @@ const App = () => {
   };
 
   const handleFilter = ({ target }) => {
-    dispatch(filterAction(target.value));
+    dispatch(setFilter(target.value));
   };
 
   return (

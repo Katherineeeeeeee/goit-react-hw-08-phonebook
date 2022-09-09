@@ -24,7 +24,7 @@ import s from './Phonebook/Phonebook.module.css';
 
 const App = () => {
   const contacts = useSelector(getContacts);
-  const { loading, error } = useSelector(getState);
+  const { loading } = useSelector(getState); //must be 'error' in const { loading, error }
 
   const filter = useSelector(getFilter);
   const filtredContacts = getFilterContacts(contacts, filter);

@@ -1,15 +1,20 @@
+import { useEffect } from 'react';
 //redux
 import { useSelector, useDispatch } from 'react-redux';
+
 import {
+  fetchContacts,
   addContactAction,
   removeContactAction,
-} from '../redux/contacts/items/items-slice';
-import { setFilter } from 'redux/contacts/filter/filter-slice';
+} from 'redux/contacts/contacts-operations';
+
+import { setFilter } from 'redux/filter/filter-actions'; //+
 import {
-  getFilterContacts,
   getContacts,
-} from '../redux/contacts/items/items-selectors';
-import { getFilter } from 'redux/contacts/filter/filter-selectors';
+  getFilterContacts,
+  getState,
+} from '../redux/contacts/contacts-selectors'; //+
+import { getFilter } from 'redux/filter/filter-selectors'; //+
 
 import ContactForm from './Phonebook/Form-elements/ContactForm';
 import Filter from './Phonebook/Filter';
@@ -19,10 +24,15 @@ import s from './Phonebook/Phonebook.module.css';
 
 const App = () => {
   const contacts = useSelector(getContacts);
+  const { loading, error } = useSelector(getState);
 
   const filter = useSelector(getFilter);
   const filtredContacts = getFilterContacts(contacts, filter);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   const addContact = data => {
     dispatch(addContactAction(data));
@@ -43,7 +53,10 @@ const App = () => {
 
       <h2 className={s.title}>Contacts</h2>
       <Filter value={filter} onChange={handleFilter} />
-      <ContactList contacts={filtredContacts} removeContact={removeContact} />
+      {!loading && contacts.length > 0 && (
+        <ContactList contacts={filtredContacts} removeContact={removeContact} />
+      )}
+      {loading && <p>...Loading</p>}
     </div>
   );
 };

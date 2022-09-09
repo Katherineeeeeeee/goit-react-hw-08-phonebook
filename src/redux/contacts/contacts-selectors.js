@@ -7,10 +7,10 @@ export const getState = ({ contacts }) => ({
 
 export const getFilterContacts = (contacts, filter) => {
   if (!filter) {
-    return contacts.items;
+    return contacts;
   }
   const normalizedFilter = filter.toLowerCase();
-  const result = contacts.items.filter(({ name, number }) => {
+  const result = contacts.filter(({ name, number }) => {
     const normalizedName = name.toLowerCase();
     const normalizedNumber = number.toLowerCase();
     return (

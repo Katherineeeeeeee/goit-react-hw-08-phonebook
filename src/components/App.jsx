@@ -1,20 +1,20 @@
 import { useEffect } from 'react';
-//redux
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
   fetchContacts,
-  addContactAction,
-  removeContactAction,
+  addContactFromApi,
+  removeContactFromApi,
 } from 'redux/contacts/contacts-operations';
 
-import { setFilter } from 'redux/filter/filter-actions'; //+
+import { setFilter } from 'redux/filter/filter-actions';
 import {
   getContacts,
   getFilterContacts,
   getState,
-} from '../redux/contacts/contacts-selectors'; //+
-import { getFilter } from 'redux/filter/filter-selectors'; //+
+} from '../redux/contacts/contacts-selectors';
+
+import { getFilter } from 'redux/filter/filter-selectors';
 
 import ContactForm from './Phonebook/Form-elements/ContactForm';
 import Filter from './Phonebook/Filter';
@@ -35,11 +35,11 @@ const App = () => {
   }, [dispatch]);
 
   const addContact = data => {
-    dispatch(addContactAction(data));
+    dispatch(addContactFromApi(data));
   };
 
   const removeContact = id => {
-    dispatch(removeContactAction(id));
+    dispatch(removeContactFromApi(id));
   };
 
   const handleFilter = ({ target }) => {

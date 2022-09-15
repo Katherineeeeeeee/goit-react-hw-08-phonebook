@@ -1,21 +1,17 @@
-import axios from 'axios';
-// import { getContacts } from 'redux/contacts/contacts-selectors';
-
-const instance = axios.create({
-  baseURL: 'https://631997c78e51a64d2be78f7e.mockapi.io/contacts',
-});
+import instance from './auth';
 
 export const getContactsFromApi = async () => {
-  const { data } = await instance.get('/');
+  const { data } = await instance.get('/contacts');
   return data;
 };
 
 export const addContactFromApi = async data => {
-  const { data: result } = await instance.post('/', data);
+  const { data: result } = await instance.post('/contacts', data);
   return result;
 };
 
 export const removeContactFromApi = async id => {
-  const { data } = await instance.delete(`/${id}`);
+  const { data } = await instance.delete(`/contacts/${id}`);
+
   return data;
 };

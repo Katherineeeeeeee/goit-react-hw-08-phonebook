@@ -9,6 +9,7 @@ const Filter = ({ value, onChange }) => {
       onChange={onChange}
       type="text"
       name="filter"
+      placeholder="Search"
     />
   );
 };

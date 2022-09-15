@@ -25,7 +25,6 @@ const ContactForm = ({ onSubmit }) => {
   return (
     <form className={s.form} onSubmit={handleSubmit}>
       <label className={s.label}>
-        <span className={s.txt}>Name</span>
         <input
           className={s.input}
           value={name}
@@ -35,10 +34,10 @@ const ContactForm = ({ onSubmit }) => {
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
+          placeholder="Name"
         />
       </label>
       <label className={s.label}>
-        <span className={s.txt}>Number</span>
         <input
           className={s.input}
           value={number}
@@ -48,6 +47,7 @@ const ContactForm = ({ onSubmit }) => {
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
+          placeholder="Pnone number"
         />
       </label>
       <button className={s.btn} type="submit">

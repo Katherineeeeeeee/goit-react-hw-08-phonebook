@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* padding: 30px 30px; */
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 30px;
+  width: 60%;
+
+  background-color: rgba(103, 103, 103, 0.9);
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+  -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+}

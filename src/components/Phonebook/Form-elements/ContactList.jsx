@@ -4,6 +4,7 @@ import s from '../Phonebook.module.css';
 import ConactListItem from './ContactListItem';
 
 const ContactList = ({ contacts, removeContact }) => {
+  // console.log('contacts :>> ', contacts);
   return (
     <>
       <ul className={s.list}>

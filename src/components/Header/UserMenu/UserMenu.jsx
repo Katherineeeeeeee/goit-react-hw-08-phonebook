@@ -1,9 +1,10 @@
 import s from './UserMenu.module.css';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import { logout } from 'redux/auth/auth-operations';
 
-const UserMenu = () => {
+export default function UserMenu() {
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -17,6 +18,8 @@ const UserMenu = () => {
       </button>
     </div>
   );
-};
+}
 
-export default UserMenu;
+UserMenu.propTypes = {
+  onLogout: PropTypes.func,
+};

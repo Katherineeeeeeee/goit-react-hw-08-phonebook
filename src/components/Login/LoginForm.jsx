@@ -1,4 +1,5 @@
 import s from './Login.module.css';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import { field } from '../TextField/field';
 
 import avatar from '../../images/avatar.jpeg';
 
-const LoginForm = ({ onSubmit }) => {
+export default function LoginForm({ onSubmit }) {
   const [state, setState] = useState({ ...initialState });
 
   const onChange = e => {
@@ -62,6 +63,8 @@ const LoginForm = ({ onSubmit }) => {
       </div>
     </div>
   );
-};
+}
 
-export default LoginForm;
+LoginForm.propTypes = {
+  onSubmit: PropTypes.func,
+};

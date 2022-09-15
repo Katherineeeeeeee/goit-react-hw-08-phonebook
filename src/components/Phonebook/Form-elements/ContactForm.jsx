@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import initialState from './initialState';
 import s from '../Phonebook.module.css';
 
-const ContactForm = ({ onSubmit }) => {
+export default function ContactForm({ onSubmit }) {
   const [state, setState] = useState({ ...initialState });
 
   const handleChange = e => {
@@ -55,9 +55,7 @@ const ContactForm = ({ onSubmit }) => {
       </button>
     </form>
   );
-};
-
-export default ContactForm;
+}
 
 ContactForm.defaultProps = {
   onSubmit: () => {},

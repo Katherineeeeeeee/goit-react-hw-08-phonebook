@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import s from '../Phonebook/Phonebook.module.css';
 
-const Filter = ({ value, onChange }) => {
+export default function Filter({ value, onChange }) {
   return (
     <input
       className={s.filter}
@@ -12,11 +12,9 @@ const Filter = ({ value, onChange }) => {
       placeholder="Search"
     />
   );
-};
+}
 
 Filter.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
-
-export default Filter;

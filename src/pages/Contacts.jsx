@@ -22,7 +22,7 @@ import ContactList from '../components/Phonebook/Form-elements/ContactList';
 
 import s from '../components/Phonebook/Phonebook.module.css';
 
-const Contacts = () => {
+export default function Contacts() {
   const contacts = useSelector(getContacts);
   const { loading } = useSelector(getState); //must be 'error' in const { loading, error }
 
@@ -64,6 +64,4 @@ const Contacts = () => {
       </div>
     </div>
   );
-};
-
-export default Contacts;
+}

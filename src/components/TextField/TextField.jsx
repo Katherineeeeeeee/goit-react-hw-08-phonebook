@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 import { nanoid } from 'nanoid';
 import s from './TextField.module.css';
@@ -33,4 +34,11 @@ export default function TextField({
 TextField.defaultProps = {
   type: 'text', //propTypes
   required: false,
+};
+
+TextField.propTypes = {
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 };

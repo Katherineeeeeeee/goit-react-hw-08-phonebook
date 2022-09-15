@@ -10,7 +10,7 @@ import { field } from 'components/TextField/field';
 
 import avatar from '../../images/avatar-register.JPG';
 
-const RegisterForm = ({ onSubmit }) => {
+export default function RegisterForm({ onSubmit }) {
   const [state, setState] = useState({ ...initialState });
 
   const onChange = e => {
@@ -67,9 +67,7 @@ const RegisterForm = ({ onSubmit }) => {
       </div>
     </div>
   );
-};
-
-export default RegisterForm;
+}
 
 RegisterForm.defaultProps = {
   onSubmit: () => {},

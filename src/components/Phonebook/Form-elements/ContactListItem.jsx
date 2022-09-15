@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import s from '../Phonebook.module.css';
 
-const ContactListItem = ({ name, number, removeContact, id }) => {
-  // console.log('id :>> ', id);
+export default function ContactListItem({ name, number, removeContact, id }) {
   return (
     <>
       <li className={s.item}>
@@ -14,9 +13,7 @@ const ContactListItem = ({ name, number, removeContact, id }) => {
       </li>
     </>
   );
-};
-
-export default ContactListItem;
+}
 
 ContactListItem.propTypes = {
   name: PropTypes.string.isRequired,

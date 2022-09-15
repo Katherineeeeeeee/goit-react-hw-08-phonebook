@@ -3,8 +3,7 @@ import { nanoid } from 'nanoid';
 import s from '../Phonebook.module.css';
 import ConactListItem from './ContactListItem';
 
-const ContactList = ({ contacts, removeContact }) => {
-  // console.log('contacts :>> ', contacts);
+export default function ContactList({ contacts, removeContact }) {
   return (
     <>
       <ul className={s.list}>
@@ -20,9 +19,7 @@ const ContactList = ({ contacts, removeContact }) => {
       </ul>
     </>
   );
-};
-
-export default ContactList;
+}
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(

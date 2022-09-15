@@ -12,6 +12,5 @@ export const addContactFromApi = async data => {
 
 export const removeContactFromApi = async id => {
   const { data } = await instance.delete(`/contacts/${id}`);
-
   return data;
 };

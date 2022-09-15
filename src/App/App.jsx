@@ -1,22 +1,15 @@
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-
-// import { getCurrentUser } from '../redux/auth/auth-operations';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from 'components/Header/Header';
 import UserRoutes from '../UserRoutes';
 
 export default function App() {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getCurrentUser());
-  // }, []);
-
   return (
-    <div>
+    <>
+      <ToastContainer autoClose={3000} position="top-center" />
       <Header />
       <UserRoutes />
-    </div>
+    </>
   );
 }

@@ -5,7 +5,7 @@ import {
   removeContactFromApi,
 } from './contacts-operations';
 
-import { pendingCallback, rejectedCallback } from 'helpers/createOperation';
+import { pendingCallback, rejectedCallback } from '../../helpers/exportFunc';
 
 const initialState = {
   items: [],
@@ -34,7 +34,7 @@ const contactsSlice = createSlice({
     [removeContactFromApi.pending]: pendingCallback,
     [removeContactFromApi.fulfilled]: (store, { payload }) => {
       store.loading = false;
-      store.items = store.items.filter(item => item.id !== payload.id);
+      store.items = store.items.filter(item => item.id !== payload);
     },
     [removeContactFromApi.rejected]: rejectedCallback,
   },

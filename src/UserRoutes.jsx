@@ -14,7 +14,7 @@ export default function UserRoutes() {
     <Suspense fallback={<p>Loading...</p>}>
       <Routes>
         <Route element={<PrivateRoute />}>
-          <Route path="/goit-react-hw-08-phonebook" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="contacts" element={<Contacts />} />
         </Route>
 

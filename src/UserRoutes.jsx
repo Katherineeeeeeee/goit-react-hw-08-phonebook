@@ -15,12 +15,12 @@ export default function UserRoutes() {
       <Routes>
         <Route element={<PrivateRoute />}>
           <Route path="/goit-react-hw-08-phonebook" element={<Home />} />
-          <Route path="contacts" element={<Contacts />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Route>
 
         <Route element={<PublicRoute />}>
-          <Route path="register" element={<Register />} />
-          <Route path="login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
